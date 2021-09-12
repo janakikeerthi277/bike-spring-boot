@@ -31,4 +31,10 @@ public class BikesController {
     public Bike get(@PathVariable("id") long id){
         return  bikeRepository.getOne(id);
     }
+
+    @DeleteMapping("/deletebike/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void delete(@PathVariable("id") long id){
+        bikeRepository.deleteById(id);
+    }
 }
